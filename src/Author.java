@@ -5,22 +5,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Author extends Person {
-    private List books;
+    public final ArrayList<String> books;
 
     public Author(String firstName, String lastName) {
         super(firstName, lastName);
-        books = new ArrayList();
+        books = new ArrayList(publishedBooks());
     }
 
-    /**
-     * @deprecated Use publishedBooks instead
-     */
-    @Deprecated
-    public List<String> getBooks() {
-        return books;
-    }
+//    /**
+//     * @deprecated Use publishedBooks instead
+//     */
+//    @Deprecated
+//    public ArrayList<String> getBooks() {
+//        return books;
+//    }
 
-    public List<String> publishedBooks() {
+    public ArrayList<String> publishedBooks() {
         return books;
     }
 
@@ -28,7 +28,7 @@ public class Author extends Person {
         books.add(book);
     }
 
-    @Override
+//    @Override
     public String sortName() {
         return String.format("%s, %s", lastName, firstName);
     }
